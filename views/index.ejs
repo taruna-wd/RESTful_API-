@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> all posts show instra post</h1>
+    <% for(post of posts){ %>
+       <div>
+           <h3>@ <%= post.username %></h3>
+           <p> <%= post.content %> </p>
+           <a href="http://localhost:3000/<%= post.id %>"> see in details</a>
+           <a href="http://localhost:3000/<%= post.id %>/edit"> Edit detailss</a>
+           <form action="/<%=post.id %> ?_method=DELETE " method="post">
+          <button>delete</button>
+           </form>
+           
+
+       </div>
+
+   <% } %>
+    
+
+   <br><br>
+   <a href="http://localhost:3000/new"> Create new post</a>
+</body>
+</html>
